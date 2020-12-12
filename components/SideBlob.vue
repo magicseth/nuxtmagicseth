@@ -13,7 +13,7 @@
         fill: #333333;
       }
     </style>
-    <path class="greyblob">
+    <path class="greysvg">
       <animate
         dur="10s"
         repeatCount="indefinite"
