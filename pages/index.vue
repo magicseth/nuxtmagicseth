@@ -1,0 +1,77 @@
+<template>
+  <div class="main" style="min-width: 20vh; min-height: 20vh">
+    <circle-blob style="position: absolute" />
+    <enter-blob class="enterblob" />
+    <div class="blobtext">
+      Let me open<br />
+      your mind.<br /><br /><a href="#impossible">
+        <span class="button" style=""> ENTER</span></a
+      >
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import Vue from "vue";
+import CircleBlob from "~/components/CircleBlob.vue";
+
+export default Vue.extend({
+  layout: "home",
+  components: { CircleBlob },
+});
+</script>
+
+<style>
+.blobtext a {
+  color: #333333;
+  text-decoration: none !important;
+}
+.enterblob {
+  width: calc(100px / 100vw);
+  height: calc(100px / 100vw);
+  transform: scale(0.2);
+  transition: transform 0.3s;
+  transition-timing-function: ease-out;
+  /* opacity: 0; */
+}
+.blobtext {
+  /* display: none; */
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  padding-top: 40%;
+  left: calc(-200px + 50%);
+  top: -50%;
+  font-size: 8vh;
+  font-family: "rift_softregular";
+  color: #333333;
+  text-align: center;
+  /* opacity: 0; */
+  transform: scale(0);
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.main:hover .enterblob {
+  transform: scale(4);
+  opacity: 1;
+}
+.main:hover .bigblob,
+.bigblob2 {
+  transform: scale(4);
+  opacity: 1;
+  transition-delay: opacity 0.7s;
+}
+.main:hover .blobtext,
+.blobtext2 {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.button {
+  border: 2px solid #333333;
+  border-radius: 30px;
+  font-size: 2.3vh;
+  padding: 7px 40px 7px 40px;
+}
+</style>
