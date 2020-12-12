@@ -8,12 +8,8 @@
     style="enable-background: new 0 0 435.39 435.39"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <style type="text/css">
-      .st0 {
-        fill: #5cbfb7;
-      }
-    </style>
-    <path class="st0">
+    <style type="text/css"></style>
+    <path class="bluesvg">
       <animate
         dur="60s"
         repeatCount="indefinite"

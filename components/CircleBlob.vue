@@ -15,7 +15,7 @@
         fill: #5cbfb7;
       }
     </style>
-    <path class="st0">
+    <path class="bluesvg">
       <animate
         dur="10s"
         repeatCount="indefinite"
@@ -48,4 +48,4 @@ M117.29,83.12c-1.97-7.37-9.28-16.15-17.07-19.37c-10.59-4.39-14.72-6.25-21.88-3.1
 <script lang="ts">
 import Vue from "vue";
 export default Vue.extend({});
-</script> 
+</script>
