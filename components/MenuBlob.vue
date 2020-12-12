@@ -9,16 +9,9 @@
     viewBox="0 0 400 90"
     xml:space="preserve"
   >
-    <style type="text/css">
-      .st0 {
-        fill: #333333;
-      }
-      .greypage .st0 {
-        fill: #5cbfb7;
-      }
-    </style>
+    <style type="text/css"></style>
 
-    <path class="st0" transform="matrix(1,0,0,1,-20,-180)">
+    <path class="greysvg" transform="matrix(1,0,0,1,-20,-180)">
       <animate
         dur="8s"
         repeatCount="indefinite"
