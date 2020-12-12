@@ -1,11 +1,16 @@
 <template>
   <div class="main" style="min-width: 20vh; min-height: 20vh">
     <circle-blob style="position: absolute" />
-    <enter-blob class="enterblob" />
+    <enter-blob
+      class="enterblob"
+      style="  width: calc(100px / 100vw);
+  height: calc(100px / 100vw);
+"
+    />
     <div class="blobtext">
       Let me open<br />
-      your mind.<br /><br /><a href="#impossible">
-        <span class="button" style=""> ENTER</span></a
+      your mind.<br /><br /><nuxt-link to="impossible">
+        <span class="button" style=""> ENTER</span></nuxt-link
       >
     </div>
   </div>
@@ -27,8 +32,6 @@ export default Vue.extend({
   text-decoration: none !important;
 }
 .enterblob {
-  width: calc(100px / 100vw);
-  height: calc(100px / 100vw);
   transform: scale(0.2);
   transition: transform 0.3s;
   transition-timing-function: ease-out;
@@ -48,13 +51,22 @@ export default Vue.extend({
   text-align: center;
   /* opacity: 0; */
   transform: scale(0);
-  transition: all 0.3s;
+  transition: 0.3s;
   transition-timing-function: ease-out;
 }
 .main:hover .enterblob {
   transform: scale(4);
   opacity: 1;
 }
+
+.layout-leave-active .enterblob {
+  transform: scale(20) !important;
+}
+
+.layout-leave-active .blobtext {
+  opacity: 0 !important;
+}
+
 .main:hover .bigblob,
 .bigblob2 {
   transform: scale(4);

@@ -238,4 +238,15 @@
 .quote:hover {
   opacity: 1;
 }
+
+.quotes {
+  font-size: 0.8em;
+  grid-area: main;
+  /* position: relative; */
+  display: flex; /* or inline-flex */
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 100vw;
+  overflow: hidden;
+}
 </style>

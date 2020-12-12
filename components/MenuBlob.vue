@@ -11,7 +11,10 @@
   >
     <style type="text/css">
       .st0 {
-        fill: #7a7a7a;
+        fill: #333333;
+      }
+      .greypage .st0 {
+        fill: #5cbfb7;
       }
     </style>
 
