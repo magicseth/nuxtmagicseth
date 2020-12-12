@@ -4,7 +4,7 @@
       <side-blob class="realblob" style="height:40vh" />
 
       <div class="sideblobtext">
-        <nuxt-link to="animaltrick">Animal <br />Trick</nuxt-link>
+        <nuxt-link to="/animaltrick">Animal <br />Trick</nuxt-link>
       </div>
     </div>
 
