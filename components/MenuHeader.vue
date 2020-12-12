@@ -2,13 +2,17 @@
   <div class="menu" style="height:100%">
     <menu-blob class="closed" height="10vh" />
     <div class="menuitems">
-      <div>Home</div>
+      <div><nuxt-link to="/"> Home</nuxt-link></div>
       <div>Magicians</div>
       <div>Contact</div>
     </div>
   </div>
 </template>
 <style scoped>
+a {
+  text-decoration: none;
+  color: white;
+}
 .menu {
   height: 100%;
   color: white;
@@ -17,6 +21,11 @@
 .greypage .menu {
   color: #333333;
 }
+.greypage a {
+  text-decoration: none;
+  color: #333333;
+}
+
 .menu .closed {
   position: absolute;
 }

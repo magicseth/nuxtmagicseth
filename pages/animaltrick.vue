@@ -1,22 +1,53 @@
 <template>
-  <div class="fullgrid">
-    <div class="sideblob">
-      <div class="sideblobtext">Animal <br />Trick</div>
-    </div>
+  <div>
+    <div class="fullgrid" style="position:fixed;top:0px">
+      <div class="sideblob">
+        <div class="sideblobtext">Animal <br />Trick</div>
+      </div>
 
-    <div class="header">
-      <menu-header />
+      <div class="header">
+        <menu-header />
+      </div>
     </div>
-
-    <div class="main">
+    <div
+      class="fullwidth "
+      :class="{ offline: offline }"
+      style="margin-top:10vh"
+    >
       <div style="position:relative">
-        <div class="title">I need a new pet</div>
         <div class="imaginationblob">
           <imagination-blob class="blobbg" />
-          <span class="light"
-            >I'll push what you think is possible <br />
-            using technology and your imagination.</span
-          >
+        </div>
+        <div class="title1" @click="offline = !offline">I need a new pet</div>
+        <div
+          class="title hideoffline"
+          style="margin-top:23vh;color:#ffffff;font-size:2em"
+        >
+          But let's keep this private. <br /><br />
+          Turn on airplane mode. Turn off WiFi.
+        </div>
+        <div class="title2 showoffline" style="margin-top:20vh">
+          But what to get?
+        </div>
+        <div class="title2 showoffline" style="margin-top:100vh">
+          Something unique...
+        </div>
+        <div class="title2 showoffline" style="margin-top:100vh">
+          What should I get?<br />
+          <input
+            style="width:50vw;font-size:2vw; border: 1px solid white;
+  border-radius: 8px;
+  background: transparent"
+            @focus="scrollToBotton()"
+            placeholder="Type your suggestion here"
+          />
+        </div>
+
+        <div
+          class="title2 showoffline"
+          style="margin-top:50vh; height:2.5vw;overflow:hidden"
+        >
+          (617) 710-7496
         </div>
       </div>
     </div>
@@ -30,14 +61,72 @@ import CircleBlob from "~/components/CircleBlob.vue";
 export default Vue.extend({
   layout: "greypage",
   components: { CircleBlob },
+  data() {
+    return {
+      offline: false,
+    };
+  },
+  methods: {
+    scrollToBotton() {
+      window.scrollTo({
+        left: 0,
+        top: document.body.scrollHeight,
+        behavior: "smooth",
+      });
+    },
+  },
 });
 </script>
 
 <style scoped>
+.imaginationblob {
+  transition: 1s;
+}
+.offline .imaginationblob {
+  opacity: 0;
+}
+.offline .showoffline {
+  opacity: 1;
+  display: block;
+}
+.showoffline {
+  opacity: 0;
+  display: none;
+}
+.offline .title1 {
+  transition: 1s;
+  margin-top: -70vh;
+}
+.hideoffline {
+  transition: 1s;
+}
+.offline .hideoffline {
+  opacity: 0;
+}
+input[value$="i"] {
+  background-color: blue;
+}
+.fullwidth {
+  background-color: teal;
+  /* width: 100vw; */
+  margin-left: 12vw;
+  margin-right: 12vw;
+  text-align: center;
+}
+.title1,
+.title2,
 .title {
   font-family: "rift_softregular";
   font-size: 10vw;
+  width: 75vw;
   color: white;
+  text-align: center;
+}
+.title2 {
+  font-size: 7vw !important;
+}
+.title1 {
+  margin-top: -23vw;
 }
 .sideblob {
   position: absolute;

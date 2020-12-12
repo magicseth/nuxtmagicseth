@@ -59,7 +59,11 @@ export default Vue.extend({
   opacity: 1;
 }
 
+/* .layout-leave {} */
 .layout-leave-active .enterblob {
+  transition: 1s;
+}
+.layout-leave-to .enterblob {
   transform: scale(20) !important;
 }
 

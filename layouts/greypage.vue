@@ -5,3 +5,8 @@
     </transition>
   </div>
 </template>
+<style scoped>
+.greypage {
+  background-color: #333333;
+}
+</style>

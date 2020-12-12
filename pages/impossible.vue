@@ -66,6 +66,9 @@ export default Vue.extend({
   transition: 0.3s;
 }
 .layout-leave-active .realblob {
+  transition: 1s;
+}
+.layout-leave-to .realblob {
   transform: scale(30) !important;
 }
 
