@@ -7,6 +7,7 @@
 
       <div class="header">
         <menu-header />
+        <bunnies-accross :class="'bunny' + bunnynumber" />
       </div>
     </div>
     <div
@@ -29,7 +30,7 @@
         <div class="title2 showoffline" style="margin-top:20vh">
           But what to get?
         </div>
-        <div class="title2 showoffline" style="margin-top:100vh">
+        <div class="title2 showoffline" id="unique" style="margin-top:100vh">
           Something unique...
         </div>
         <div class="title2 showoffline" style="margin-top:100vh">
@@ -64,6 +65,7 @@ export default Vue.extend({
   data() {
     return {
       offline: false,
+      bunnynumber: 0,
     };
   },
   methods: {
@@ -74,6 +76,32 @@ export default Vue.extend({
         behavior: "smooth",
       });
     },
+  },
+  mounted() {
+    if (process.client) {
+      var mythis = this;
+      document.addEventListener(
+        "scroll",
+        (evt) => {
+          var unique = document.getElementById("unique");
+          if (unique) {
+            var bottom = unique.getBoundingClientRect().bottom;
+            var h = window.innerHeight;
+            if (bottom < h) {
+              var n = Math.floor(((h - bottom) / h) * 12) + 1;
+              console.log("n is " + n);
+              this.bunnynumber = n;
+            } else {
+              this.bunnynumber = 0;
+            }
+          }
+        },
+        {
+          capture: false,
+          passive: true,
+        }
+      );
+    }
   },
 });
 </script>
