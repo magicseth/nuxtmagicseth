@@ -25,18 +25,21 @@
 .greypage .greysvg {
   fill: #5cbfb7;
 }
+.layout-enter-active .fullwidth > div,
 .layout-enter-active .fullgrid > div,
 .layout-enter-active,
 .layout-leave-to {
-  transition: opacity 1s;
+  transition: opacity 0.4s;
 }
-.layout-enter .fullgrid {
+/* .layout-enter .fullgrid {
   opacity: 1;
-}
-
+} */
+.layout-enter .fullwidth > div,
 .layout-enter .fullgrid > div {
   opacity: 0;
+  transition: opacity 1s;
 }
+.layout-enter-to .fullwidth > div,
 .layout-enter-to .fullgrid > div {
   opacity: 1;
 }
@@ -45,9 +48,9 @@
   opacity: 1;
 }
 
-.layout-leave-to .fullgrid .main {
+/* .layout-leave-to .fullgrid .main {
   opacity: 0;
-}
+} */
 
 .animaltrick-enter-active,
 .animaltrick-leave-to {
