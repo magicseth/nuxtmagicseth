@@ -134,13 +134,6 @@ export default Vue.extend({
 input[value$="i"] {
   background-color: blue;
 }
-.fullwidth {
-  background-color: teal;
-  /* width: 100vw; */
-  margin-left: 12vw;
-  margin-right: 12vw;
-  text-align: center;
-}
 .title1,
 .title2,
 .title {

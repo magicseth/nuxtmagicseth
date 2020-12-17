@@ -4,7 +4,7 @@
     <div class="menuitems">
       <div><nuxt-link to="/"> Home</nuxt-link></div>
       <div>Magicians</div>
-      <div>Contact</div>
+      <div><nuxt-link to="/about">About</nuxt-link></div>
     </div>
   </div>
 </template>
@@ -48,5 +48,13 @@ a {
 }
 .menu:hover {
   margin-left: 0;
+}
+a:hover {
+  font-weight: bold;
+  color: #aaaaaa;
+}
+.greypage a:hover {
+  color: black;
+  transform: scale(2);
 }
 </style>

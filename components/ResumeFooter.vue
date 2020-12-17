@@ -13,18 +13,4 @@
     </div>
   </div>
 </template>
-<style>
-.footer div {
-  align-self: center;
-}
-.footerLinks {
-  align-self: center;
-
-  display: flex;
-  justify-content: space-evenly;
-  font-size: 2vw;
-}
-.footerLinks svg {
-  opacity: 0.3;
-}
-</style>
+<style></style>
