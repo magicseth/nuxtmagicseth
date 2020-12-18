@@ -9,7 +9,7 @@
     />
     <div class="blobtext">
       Let me open<br />
-      your mind.<br /><br /><nuxt-link to="impossible">
+      your mind.<br /><nuxt-link to="impossible">
         <span class="button" style=""> ENTER</span></nuxt-link
       >
     </div>
@@ -55,7 +55,7 @@ export default Vue.extend({
   transition-timing-function: ease-out;
 }
 .main:hover .enterblob {
-  transform: scale(4);
+  transform: scale(3);
   opacity: 1;
 }
 
@@ -71,12 +71,6 @@ export default Vue.extend({
   opacity: 0 !important;
 }
 
-.main:hover .bigblob,
-.bigblob2 {
-  transform: scale(4);
-  opacity: 1;
-  transition-delay: opacity 0.7s;
-}
 .main:hover .blobtext,
 .blobtext2 {
   display: block;

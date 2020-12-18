@@ -14,9 +14,8 @@
       Robert Ramirez
     </div>
     <div class="quote">
-      Amaze<br />
-      "one of the best tricks I've ever seen” <br />
-      Andy (from thejerx.com)
+      "I agree that that's impressive" <br />
+      James Randi
     </div>
     <div class="quote">
       "Seth Raphael blows the mind”<br />

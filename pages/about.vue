@@ -67,7 +67,7 @@ p {
 }
 .title {
   font-family: "rift_softregular";
-  font-size: 8vw;
+  font-size: 8vh;
   padding-bottom: 8vh;
 }
 

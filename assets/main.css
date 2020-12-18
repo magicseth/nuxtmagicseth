@@ -72,6 +72,9 @@
     "header "
     "main "
     "footer ";
+
+  position: relative;
+  overflow: hidden;
 }
 
 .fullwidth {
@@ -109,6 +112,7 @@
   grid-template-columns: max-content auto;
   grid-template-rows: auto;
   grid-template-areas: "footerSeth footerLinks ";
+  width: 100vw;
 }
 
 .footer div {
@@ -147,11 +151,19 @@
   }
   .footerLinks {
     justify-content: space-between;
-    font-size: 3vw;
+    font-size: max(2rem, 3vw);
+    flex-wrap: wrap;
+    overflow: hidden;
+    height: max(1rem, 3.1vw);
   }
 
   .footerLinks svg {
-    width: 7vw;
+    width: max(2rem, 7vw);
+  }
+
+  .footer svg {
+    width: max(2rem, 1.4vh);
+    margin: 0px 5px 0px 5px;
   }
 }
 

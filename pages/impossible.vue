@@ -1,4 +1,4 @@
-<template>
+ffloat<template>
   <div class="fullgrid">
     <div class="sideblob">
       <side-blob class="realblob" style="height:40vh" />
@@ -16,11 +16,13 @@
       <div style="position:relative">
         <div class="title">Let's do the impossible</div>
         <div class="imaginationblob">
-          <imagination-blob class="blobbg" />
-          <span class="light"
-            >I'll push what you think is possible <br />
-            using technology and your imagination.</span
-          >
+          <div class="centerer">
+            <imagination-blob class="blobbg centered" />
+            <span class="light centered"
+              >I'll push what you think is possible <br />
+              using technology and your imagination.</span
+            >
+          </div>
         </div>
       </div>
     </div>
@@ -35,6 +37,50 @@ export default Vue.extend({
 });
 </script>
 <style scoped>
+.centerer {
+  display: grid;
+}
+
+.item-a {
+  grid-area: header;
+}
+.item-b {
+  grid-area: main;
+}
+.item-c {
+  grid-area: sidebar;
+}
+.item-d {
+  grid-area: footer;
+}
+
+.centerer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "thespot";
+}
+
+.foot {
+  grid-area: thespot;
+}
+
+.centered {
+  grid-area: thespot;
+  place-self: center;
+}
+
+@media only screen and (max-width: 600px) {
+  div.sideblob {
+    position: absolute;
+    height: 40vh;
+    bottom: 0px;
+    top: initial;
+  }
+  div.sideblob * {
+    margin-bottom: -10vh;
+  }
+}
 .sideblob {
   position: absolute;
   right: 0px;
@@ -86,9 +132,6 @@ export default Vue.extend({
 }
 .light {
   color: white;
-  position: absolute;
-  width: 100vw;
-  margin-left: -50vw;
   font-size: 4vw;
   margin-top: -0.5em;
   font-family: "rift_softregular";
@@ -101,8 +144,6 @@ export default Vue.extend({
 }
 .imaginationblob .blobbg {
   transition: 0.4s;
-  position: absolute;
-  margin-left: -5vw;
 }
 .imaginationblob:hover .blobbg {
   transform: scale(8);
