@@ -37,10 +37,6 @@ export default Vue.extend({
 });
 </script>
 <style scoped>
-.centerer {
-  display: grid;
-}
-
 .item-a {
   grid-area: header;
 }
@@ -52,22 +48,6 @@ export default Vue.extend({
 }
 .item-d {
   grid-area: footer;
-}
-
-.centerer {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-template-areas: "thespot";
-}
-
-.foot {
-  grid-area: thespot;
-}
-
-.centered {
-  grid-area: thespot;
-  place-self: center;
 }
 
 @media only screen and (max-width: 600px) {
@@ -87,6 +67,10 @@ export default Vue.extend({
   height: 40vh;
   top: 30vh;
   transition: 0.3s;
+}
+
+.sideblob:hover {
+  transform: scale(1.2);
 }
 .sideblob a {
   text-decoration: none;

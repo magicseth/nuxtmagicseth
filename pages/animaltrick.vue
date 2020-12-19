@@ -1,54 +1,64 @@
 <template>
   <div>
-    <div class="fullgrid" style="position:fixed;top:0px">
-      <div class="sideblob">
+    <div class="fullgrid">
+      <!-- <div class="sideblob">
         <div class="sideblobtext">Animal <br />Trick</div>
-      </div>
+      </div> -->
 
       <div class="header">
         <menu-header />
         <bunnies-accross :class="'bunny' + bunnynumber" />
       </div>
-    </div>
-    <div
-      class="fullwidth "
-      :class="{ offline: offline }"
-      style="margin-top:10vh"
-    >
-      <div style="position:relative">
-        <div class="imaginationblob">
-          <imagination-blob class="blobbg" />
-        </div>
-        <div class="title1" @click="offline = !offline">I need a new pet</div>
-        <div
-          class="title hideoffline"
-          style="margin-top:23vh;color:#ffffff;font-size:2em"
-        >
-          But let's keep this private. <br /><br />
-          Turn on airplane mode. Turn off WiFi.
-        </div>
-        <div class="title2 showoffline" style="margin-top:20vh">
-          But what to get?
-        </div>
-        <div class="title2 showoffline" id="unique" style="margin-top:100vh">
-          Something unique...
-        </div>
-        <div class="title2 showoffline" style="margin-top:100vh">
-          What should I get?<br />
-          <input
-            style="width:50vw;font-size:2vw; border: 1px solid white;
-  border-radius: 8px;
-  background: transparent"
-            @focus="scrollToBotton()"
-            placeholder="Type your suggestion here"
-          />
-        </div>
 
-        <div
-          class="title2 showoffline"
-          style="margin-top:50vh; height:2.5vw;overflow:hidden"
-        >
-          (617) 710-7496
+      <div
+        :class="{ offline: offline }"
+        class="animaltrick"
+        style="place-self:stretch; top:0px; left:0px"
+      >
+        <div class="fullpage hideoffline">
+          <div class="centerer">
+            <div class="imaginationblob centered">
+              <imagination-blob class="blobbg" />
+            </div>
+            <div class="title1 centered" @click="offline = !offline">
+              I need a new pet
+            </div>
+          </div>
+          <div class="centerer">
+            <div
+              class=" centered title hideoffline"
+              style="color:#ffffff;font-size:2em"
+            >
+              But let's keep this private. <br /><br />
+              Turn on airplane mode. Turn off WiFi.
+            </div>
+          </div>
+        </div>
+        <div class="fullpage centerer" @click="hideme">
+          <div class="title2 showoffline centered">
+            But what to get?
+          </div>
+        </div>
+        <div class="fullpage centerer" @click="hideme">
+          <div class="title2 showoffline centered">
+            Something Unique
+          </div>
+        </div>
+        <div class="fullpage centerer">
+          <div class="title2 showoffline centered">
+            What should I get?<br />
+            <input placeholder="Type your suggestion here" /><br />
+            <div
+              style=";margin:auto;text-align:right;width:50vw;font-size:max(.7rem, 1.5vw);margin-top:1vw"
+            >
+              Press enter to commit.
+            </div>
+          </div>
+        </div>
+        <div class="fullpage centerer" @click="hideme">
+          <div class="title2 showoffline centered">
+            (617) 710-7496
+          </div>
         </div>
       </div>
     </div>
@@ -69,6 +79,10 @@ export default Vue.extend({
     };
   },
   methods: {
+    hideme(e: any) {
+      console.log(e);
+      e.currentTarget.classList.add("hidden");
+    },
     scrollToBotton() {
       window.scrollTo({
         left: 0,
@@ -107,8 +121,25 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.animaltrick {
+  grid-column: header/footer;
+  grid-row: header / footer;
+}
+
+.main {
+  height: 100vh;
+  overflow: hidden;
+}
+.fullpage {
+  height: 100vh;
+  transition: margin 1s;
+}
+.fullpage.hidden {
+  margin-top: -100vh;
+}
 .imaginationblob {
   transition: 1s;
+  width: 70vw;
 }
 .offline .imaginationblob {
   opacity: 0;
@@ -123,16 +154,29 @@ export default Vue.extend({
 }
 .offline .title1 {
   transition: 1s;
-  margin-top: -70vh;
+  margin-top: -100vh;
 }
 .hideoffline {
   transition: 1s;
 }
 .offline .hideoffline {
   opacity: 0;
+  margin-top: -100vh;
 }
-input[value$="i"] {
-  background-color: blue;
+input {
+  width: 50vw;
+  font-size: max(1.4rem, 3vw);
+  border: 1px solid white;
+  padding-top: 2px;
+  background: transparent;
+  border-radius: 3% 3% 3% 15% / 60% 40% 60% 60%;
+  color: white;
+  font-family: reenie_beanieregular;
+  text-align: center;
+  text-transform: uppercase;
+}
+input::-webkit-input-placeholder {
+  font-family: rift_softregular;
 }
 .title1,
 .title2,
@@ -145,9 +189,6 @@ input[value$="i"] {
 }
 .title2 {
   font-size: 7vw !important;
-}
-.title1 {
-  margin-top: -23vw;
 }
 .sideblob {
   position: absolute;
