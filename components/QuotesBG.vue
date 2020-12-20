@@ -232,7 +232,7 @@
   width: 20vw;
   height: 10vh;
   font-size: 2em;
-  color: #7a7a7a;
+  color: #fff;
 }
 .quote:hover {
   opacity: 1;

@@ -104,7 +104,7 @@
 .footer {
   grid-area: footer;
   font-family: "rift_softregular";
-  font-size: max(2em, min(4vw, 10vh));
+  font-size: max(3em, min(4vw, 10vh));
   padding-left: 5vh;
   padding-right: 5vh;
   color: #7a7a7a;
@@ -151,19 +151,19 @@
   }
   .footerLinks {
     justify-content: space-between;
-    font-size: max(2rem, 3vw);
+    font-size: max(1.2rem, 3vw);
     flex-wrap: wrap;
-    overflow: hidden;
-    height: max(1rem, 3.1vw);
   }
 
   .footerLinks svg {
-    width: max(2rem, 7vw);
+    height: max(1rem, 4vw);
   }
 
   .footer svg {
-    width: max(2rem, 1.4vh);
     margin: 0px 5px 0px 5px;
+  }
+  .footer .extra {
+    display: none;
   }
 }
 

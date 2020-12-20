@@ -54,7 +54,7 @@ export default Vue.extend({
   div.sideblob {
     position: absolute;
     height: 40vh;
-    bottom: 0px;
+    bottom: -10vh;
     top: initial;
   }
   div.sideblob * {

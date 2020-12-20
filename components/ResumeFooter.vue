@@ -4,8 +4,8 @@
     <div class="footerLinks">
       <div>TED Fellow</div>
       <static-circle width="2.5vh" height="2.5vh" />
-      <div>Parent of 5</div>
-      <static-circle width="2.5vh" height="2.5vh" />
+      <div class="extra">Parent of 5</div>
+      <static-circle width="2.5vh" height="2.5vh" class="extra" />
 
       <div>Inventor at Google</div>
       <static-circle width="2.5vh" height="2.5vh" />

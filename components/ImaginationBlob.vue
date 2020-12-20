@@ -15,7 +15,7 @@
     </style>
     <path class="greysvg">
       <animate
-        dur="10s"
+        dur="4s"
         repeatCount="indefinite"
         attributeName="d"
         values="

@@ -7,7 +7,7 @@
 
       <div class="header">
         <menu-header />
-        <bunnies-accross :class="'bunny' + bunnynumber" />
+        <bunnies-accross :class="'showbunny' + bunnynumber" />
       </div>
 
       <div
@@ -15,37 +15,76 @@
         class="animaltrick"
         style="place-self:stretch; top:0px; left:0px"
       >
-        <div class="fullpage hideoffline">
+        <div class="fullpage centerer" @click="hideme">
+          <div class="centerer" style="align-content:end;">
+            <div
+              class=" centered title hideoffline"
+              style="color:#ffffff;font-size:4em"
+            >
+              Let me read your mind
+            </div>
+          </div>
+          <div class="centerer">
+            <div class="imaginationblob centered" style="width:20vw">
+              <imagination-blob class="blobbg" />
+            </div>
+            <div
+              class=" centered title hideoffline"
+              style="color:#ffffff;font-size:4em"
+            >
+              Yes!
+            </div>
+          </div>
+          <div class="centerer" style="align-content:start;">
+            <div
+              class=" centered title hideoffline"
+              style="color:#ffffff;font-size:4em"
+            >
+              Will you help me?
+            </div>
+          </div>
+        </div>
+        <div class="fullpage centerer" @click="hideme">
+          <div class="centerer" style="align-content:end">
+            <div class="title2  centered" style="font-size:2em !important">
+              to make this really impossible
+            </div>
+          </div>
+          <div class="centerer">
+            <div class="imaginationblob centered" style="width:50vw">
+              <imagination-blob class="blobbg" />
+            </div>
+
+            <div class="title2  centered">
+              lets go offline
+            </div>
+          </div>
+          <div class="centerer" style="align-content:start">
+            <div class="title2  centered" style="font-size:2em !important">
+              Turn on airplane mode<br /><br />
+              Turn off Wifi<br /><br />
+              Unplug your cables<br /><br />
+            </div>
+          </div>
+        </div>
+        <div class="fullpage centerer" @click="hideme">
           <div class="centerer">
             <div class="imaginationblob centered">
               <imagination-blob class="blobbg" />
             </div>
-            <div class="title1 centered" @click="offline = !offline">
-              I need a new pet
-            </div>
-          </div>
-          <div class="centerer">
-            <div
-              class=" centered title hideoffline"
-              style="color:#ffffff;font-size:2em"
-            >
-              But let's keep this private. <br /><br />
-              Turn on airplane mode. Turn off WiFi.
+
+            <div class="title2  centered">
+              My rabbit quit
             </div>
           </div>
         </div>
         <div class="fullpage centerer" @click="hideme">
-          <div class="title2 showoffline centered">
-            But what to get?
-          </div>
-        </div>
-        <div class="fullpage centerer" @click="hideme">
-          <div class="title2 showoffline centered">
+          <div class="title2 centered">
             Something Unique
           </div>
         </div>
         <div class="fullpage centerer">
-          <div class="title2 showoffline centered">
+          <div class="title2  centered">
             What should I get?<br />
             <input placeholder="Type your suggestion here" /><br />
             <div
@@ -56,7 +95,7 @@
           </div>
         </div>
         <div class="fullpage centerer" @click="hideme">
-          <div class="title2 showoffline centered">
+          <div class="title2  centered">
             (617) 710-7496
           </div>
         </div>
@@ -75,11 +114,15 @@ export default Vue.extend({
   data() {
     return {
       offline: false,
-      bunnynumber: 0,
+      bunnynumber: 20,
     };
   },
   methods: {
+    startBunnies() {
+      this.bunnynumber = 0;
+    },
     hideme(e: any) {
+      this.startBunnies();
       console.log(e);
       e.currentTarget.classList.add("hidden");
     },
@@ -93,6 +136,10 @@ export default Vue.extend({
   },
   mounted() {
     if (process.client) {
+      setInterval(() => {
+        this.bunnynumber++;
+      }, 400);
+
       var mythis = this;
       document.addEventListener(
         "scroll",
@@ -174,6 +221,9 @@ input {
   font-family: reenie_beanieregular;
   text-align: center;
   text-transform: uppercase;
+}
+input:focus {
+  outline: none;
 }
 input::-webkit-input-placeholder {
   font-family: rift_softregular;
