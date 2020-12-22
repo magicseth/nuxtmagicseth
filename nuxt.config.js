@@ -19,6 +19,11 @@ export default {
 
     ],
 
+    bodyAttrs: {
+      tabindex: "-1",
+    },
+
+
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 

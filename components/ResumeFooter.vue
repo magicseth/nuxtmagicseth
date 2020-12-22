@@ -7,9 +7,9 @@
       <div class="extra">Parent of 5</div>
       <static-circle width="2.5vh" height="2.5vh" class="extra" />
 
-      <div>Inventor at Google</div>
+      <div>Google Inventor</div>
       <static-circle width="2.5vh" height="2.5vh" />
-      <div>Degree in wonder from MIT</div>
+      <div>MIT Degree in wonder</div>
     </div>
   </div>
 </template>

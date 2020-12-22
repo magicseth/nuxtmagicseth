@@ -7,7 +7,10 @@
 
       <div class="header">
         <menu-header />
-        <bunnies-accross :class="'showbunny' + bunnynumber" />
+        <bunnies-accross
+          ref="bunnies"
+          :class="['showbunny' + bunnynumber, hiddenBunnies]"
+        />
       </div>
 
       <div
@@ -21,33 +24,31 @@
               class=" centered title hideoffline"
               style="color:#ffffff;font-size:4em"
             >
-              Let me read your mind
+              I'd like to read your mind
             </div>
           </div>
           <div class="centerer">
-            <div class="imaginationblob centered" style="width:20vw">
+            <div
+              class="imaginationblob centered"
+              style="width:30vw;cursor:pointer"
+            >
               <imagination-blob class="blobbg" />
             </div>
             <div
               class=" centered title hideoffline"
               style="color:#ffffff;font-size:4em"
             >
-              Yes!
-            </div>
-          </div>
-          <div class="centerer" style="align-content:start;">
-            <div
-              class=" centered title hideoffline"
-              style="color:#ffffff;font-size:4em"
-            >
-              Will you help me?
+              Okay!
             </div>
           </div>
         </div>
         <div class="fullpage centerer" @click="hideme">
           <div class="centerer" style="align-content:end">
-            <div class="title2  centered" style="font-size:2em !important">
-              to make this really impossible
+            <div class="title2  centered" style="font-size:5vw !important">
+              to make this
+              <div class="title2  centered" style="font-size:8vw !important">
+                impossible
+              </div>
             </div>
           </div>
           <div class="centerer">
@@ -67,7 +68,13 @@
             </div>
           </div>
         </div>
-        <div class="fullpage centerer" @click="hideme">
+        <div
+          class="fullpage centerer"
+          @click="
+            hideme($event);
+            startBunnies();
+          "
+        >
           <div class="centerer">
             <div class="imaginationblob centered">
               <imagination-blob class="blobbg" />
@@ -78,19 +85,34 @@
             </div>
           </div>
         </div>
+        <div class="fullpage centerer" ref="bunnyPage"></div>
+
         <div class="fullpage centerer" @click="hideme">
-          <div class="title2 centered">
-            Something Unique
+          <div class="title2 centered" style="align-self:end">
+            I need a new pet
+          </div>
+          <div class="centerer" style="align-self:start">
+            <div class="imaginationblob centered" style="width:40vw">
+              <imagination-blob class="blobbg" />
+            </div>
+            <div class="title3  centered">
+              Something Unique
+            </div>
           </div>
         </div>
         <div class="fullpage centerer">
           <div class="title2  centered">
-            What should I get?<br />
+            What animal should I get?<br />
             <input placeholder="Type your suggestion here" /><br />
             <div
               style=";margin:auto;text-align:right;width:50vw;font-size:max(.7rem, 1.5vw);margin-top:1vw"
             >
               Press enter to commit.
+            </div>
+            <br />
+            <div style="font-size:4rem;display:none" ref="notananimal">
+              Hmm, that doesn't seem like an animal to me. <br />Could you Try
+              something else?<br />
             </div>
           </div>
         </div>
@@ -115,16 +137,31 @@ export default Vue.extend({
     return {
       offline: false,
       bunnynumber: 20,
+      hiddenBunnies: "",
+      bunnyInterval: setInterval(() => {}, 10000),
     };
   },
   methods: {
     startBunnies() {
+      this.hiddenBunnies = "";
+
       this.bunnynumber = 0;
+      clearInterval(this.bunnyInterval);
+      this.bunnyInterval = setInterval(() => {
+        this.bunnynumber++;
+        if (this.bunnynumber == 14) {
+          console.log(this.$refs.bunnyPage);
+          (<Element>this.$refs.bunnyPage).classList.add("hidden");
+          this.hiddenBunnies = "hiddenbunnies";
+
+          clearInterval(this.bunnyInterval);
+        }
+      }, 400);
     },
     hideme(e: any) {
-      this.startBunnies();
-      console.log(e);
+      console.log(e.currentTarget);
       e.currentTarget.classList.add("hidden");
+      //   this.startBunnies();
     },
     scrollToBotton() {
       window.scrollTo({
@@ -136,10 +173,6 @@ export default Vue.extend({
   },
   mounted() {
     if (process.client) {
-      setInterval(() => {
-        this.bunnynumber++;
-      }, 400);
-
       var mythis = this;
       document.addEventListener(
         "scroll",
@@ -168,6 +201,9 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.hiddenbunnies {
+  display: none !important;
+}
 .animaltrick {
   grid-column: header/footer;
   grid-row: header / footer;
@@ -179,10 +215,12 @@ export default Vue.extend({
 }
 .fullpage {
   height: 100vh;
-  transition: margin 1s;
+  transition: height 1s ease, opacity 1s, margin 1s;
 }
 .fullpage.hidden {
-  margin-top: -100vh;
+  height: 0px;
+  opacity: 0;
+  overflow: hidden;
 }
 .imaginationblob {
   transition: 1s;
@@ -230,6 +268,7 @@ input::-webkit-input-placeholder {
 }
 .title1,
 .title2,
+.title3,
 .title {
   font-family: "rift_softregular";
   font-size: 10vw;
@@ -239,6 +278,10 @@ input::-webkit-input-placeholder {
 }
 .title2 {
   font-size: 7vw !important;
+}
+
+.title3 {
+  font-size: 5vw !important;
 }
 .sideblob {
   position: absolute;

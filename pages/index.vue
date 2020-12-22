@@ -23,6 +23,11 @@ import CircleBlob from "~/components/CircleBlob.vue";
 export default Vue.extend({
   layout: "home",
   components: { CircleBlob },
+  head: {
+    bodyAttrs: {
+      class: "impossible",
+    },
+  },
 });
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div
     @click="bunnynumber++"
-    style="position:absolute;left:0px;width:100vw;display:flex;justify-content:space-around;bottom:1vh"
+    style="position:absolute;left:0px;width:100vw;display:flex;justify-content:space-around;bottom:50vh"
   >
     <img class="bunny1" src="~assets/images/Bunny1.svg" />
     <img class="bunny2" src="~assets/images/Bunny2.svg" />
@@ -21,12 +21,12 @@
       <img
         class="bunny7"
         src="~assets/images/Bunny7.svg"
-        style="position:absolute;bottom:0;left:0;transition:0s"
+        style="position:absolute;bottom:0;left:-8%;transition:0s"
       />
       <img
         class="bunny8"
         src="~assets/images/Bunny8.svg"
-        style="position:absolute;bottom:0;left:0;transition:0s"
+        style="position:absolute;bottom:0;left:-30%;transition:0s"
       />
       <img
         class="bunny9"
@@ -62,6 +62,7 @@ div {
 img {
   opacity: 0;
   transition: 0.5s ease-out;
+  transform: scale(1.5);
 }
 .showbunny1 .bunny1,
 .showbunny2 .bunny2,

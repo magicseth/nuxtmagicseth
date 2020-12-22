@@ -25,11 +25,16 @@
 .greypage .greysvg {
   fill: #5cbfb7;
 }
+
+:root {
+  --layout-transition-time: 0.4s;
+}
+
 .layout-enter-active .fullwidth > div,
 .layout-enter-active .fullgrid > div,
 .layout-enter-active,
 .layout-leave-to {
-  transition: opacity 0.4s;
+  transition: opacity var(--layout-transition-time);
 }
 /* .layout-enter .fullgrid {
   opacity: 1;
@@ -51,15 +56,6 @@
 /* .layout-leave-to .fullgrid .main {
   opacity: 0;
 } */
-
-.animaltrick-enter-active,
-.animaltrick-leave-to {
-  transition: opacity 30s;
-}
-.animaltrick-enter,
-.animaltrick-leave-to {
-  opacity: 1;
-}
 
 .fullgrid {
   display: grid;
@@ -127,9 +123,14 @@
 }
 .footerLinks svg {
   opacity: 0.3;
+  height: max(0.75rem, 2vw);
 }
-
 @media only screen and (max-width: 600px) {
+  .footer .extra {
+    display: none;
+  }
+}
+@media only screen and (max-width: 750px) {
   .fullgrid {
     grid-template-rows: 10vh 1fr 8vh;
   }
@@ -160,10 +161,7 @@
   }
 
   .footer svg {
-    margin: 0px 5px 0px 5px;
-  }
-  .footer .extra {
-    display: none;
+    margin: 0px 1px 0px 1px;
   }
 }
 

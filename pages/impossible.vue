@@ -1,4 +1,4 @@
-ffloat<template>
+<template>
   <div class="fullgrid">
     <div class="sideblob">
       <side-blob class="realblob" style="height:40vh" />
@@ -34,6 +34,7 @@ import Vue from "vue";
 export default Vue.extend({
   layout: "bluepage",
   //   transition: "impossible",
+  methods: {},
 });
 </script>
 <style scoped>
@@ -60,13 +61,17 @@ export default Vue.extend({
   div.sideblob * {
     margin-bottom: -10vh;
   }
+
+  .layout-leave-to .realblob {
+    transform: scale(10) !important;
+  }
 }
 .sideblob {
   position: absolute;
   right: 0px;
   height: 40vh;
   top: 30vh;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 .sideblob:hover {
@@ -89,17 +94,14 @@ export default Vue.extend({
   font-size: 3.5vh;
 
   font-family: "rift_softregular";
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 .realblob {
-  transition: 0.3s;
-}
-.layout-leave-active .realblob {
-  transition: 0.3s;
+  transition: var(--layout-transition-time);
 }
 .layout-leave-to .realblob {
-  transform: scale(30) !important;
+  transform: scale(19) !important;
 }
 
 .layout-leave-active .sideblobtext {
@@ -135,5 +137,15 @@ export default Vue.extend({
 .imaginationblob:hover .light {
   transform: scale(1);
   opacity: 1;
+}
+
+@media only screen and (max-width: 750px) {
+  .imaginationblob:hover .blobbg {
+    transform: scale(12);
+  }
+  .imaginationblob:hover .light {
+    transform: scale(1.5);
+    opacity: 1;
+  }
 }
 </style>
