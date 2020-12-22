@@ -11,7 +11,7 @@
     <style type="text/css"></style>
     <path class="bluesvg" transform="translate(100 100)">
       <animateTransform
-        dur="15s"
+        dur="25s"
         repeatCount="indefinite"
         attributeName="transform"
         attributeType="XML"
@@ -29,7 +29,7 @@
         "
       />
       <animate
-        dur="15s"
+        dur="25s"
         repeatCount="indefinite"
         attributeName="d"
         values="

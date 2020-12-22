@@ -22,7 +22,7 @@
           <div class="centerer" style="align-content:end;">
             <div
               class=" centered title hideoffline"
-              style="color:#ffffff;font-size:4em"
+              style="color:#ffffff;font-size:6vw"
             >
               I'd like to read your mind
             </div>
@@ -36,7 +36,7 @@
             </div>
             <div
               class=" centered title hideoffline"
-              style="color:#ffffff;font-size:4em"
+              style="color:#ffffff;font-size:5vw"
             >
               Okay!
             </div>
@@ -57,7 +57,7 @@
             </div>
 
             <div class="title2  centered">
-              lets go offline
+              let's go offline
             </div>
           </div>
           <div class="centerer" style="align-content:start">
@@ -88,14 +88,14 @@
         <div class="fullpage centerer" ref="bunnyPage"></div>
 
         <div class="fullpage centerer" @click="hideme">
-          <div class="title2 centered" style="align-self:end">
+          <div class="title1 centered" style="align-self:end">
             I need a new pet
           </div>
           <div class="centerer" style="align-self:start">
-            <div class="imaginationblob centered" style="width:40vw">
+            <div class="imaginationblob centered" style="width:60vw">
               <imagination-blob class="blobbg" />
             </div>
-            <div class="title3  centered">
+            <div class="title2  centered">
               Something Unique
             </div>
           </div>
@@ -215,12 +215,13 @@ export default Vue.extend({
 }
 .fullpage {
   height: 100vh;
-  transition: height 1s ease, opacity 1s, margin 1s;
+  transition: height 1s ease, opacity 0.5s, margin 1s, visibility 0s ease 1s;
 }
 .fullpage.hidden {
   height: 0px;
   opacity: 0;
-  overflow: hidden;
+  overflow: visible;
+  visibility: hidden;
 }
 .imaginationblob {
   transition: 1s;
