@@ -18,7 +18,7 @@
         class="animaltrick"
         style="place-self:stretch; top:0px; left:0px"
       >
-        <div class="fullpage centerer" @click="hideme">
+        <div class="fullpage clickable centerer" @click="hideme">
           <div class="centerer" style="align-content:end;">
             <div
               class=" centered title hideoffline"
@@ -69,7 +69,7 @@
           </div>
         </div>
         <div
-          class="fullpage centerer"
+          class="fullpage clickable centerer"
           @click="
             hideme($event);
             startBunnies();
@@ -87,7 +87,7 @@
         </div>
         <div class="fullpage centerer" ref="bunnyPage"></div>
 
-        <div class="fullpage centerer" @click="hideme">
+        <div class="fullpage clickable centerer" @click="hideme">
           <div class="title1 centered" style="align-self:end">
             I need a new pet
           </div>
@@ -100,10 +100,13 @@
             </div>
           </div>
         </div>
-        <div class="fullpage centerer">
+        <div class="fullpage centerer" ref="animalsubmission">
           <div class="title2  centered">
             What animal should I get?<br />
-            <input placeholder="Type your suggestion here" /><br />
+            <input
+              placeholder="Type your suggestion here"
+              @keyup.enter="submitanimal"
+            /><br />
             <div
               style=";margin:auto;text-align:right;width:50vw;font-size:max(.7rem, 1.5vw);margin-top:1vw"
             >
@@ -116,9 +119,13 @@
             </div>
           </div>
         </div>
-        <div class="fullpage centerer" @click="hideme">
-          <div class="title2  centered">
+        <div class="fullpage centerer">
+          <div class="title1  centered" style="font-size:10vw">
             (617) 710-7496
+            <div class="title1 centered" style="margin-top:5vh;font-size:5vw">
+              Now call me, <br />
+              But don't ruin the surprise!
+            </div>
           </div>
         </div>
       </div>
@@ -137,7 +144,7 @@ export default Vue.extend({
     return {
       offline: false,
       bunnynumber: 20,
-      hiddenBunnies: "",
+      hiddenBunnies: "hiddenbunnies",
       bunnyInterval: setInterval(() => {}, 10000),
     };
   },
@@ -162,6 +169,9 @@ export default Vue.extend({
       console.log(e.currentTarget);
       e.currentTarget.classList.add("hidden");
       //   this.startBunnies();
+    },
+    submitanimal() {
+      (<Element>this.$refs.animalsubmission).classList.add("hidden");
     },
     scrollToBotton() {
       window.scrollTo({
@@ -216,6 +226,9 @@ export default Vue.extend({
 .fullpage {
   height: 100vh;
   transition: height 1s ease, opacity 0.5s, margin 1s, visibility 0s ease 1s;
+}
+.fullpage.clickable {
+  cursor: pointer;
 }
 .fullpage.hidden {
   height: 0px;
