@@ -299,6 +299,12 @@ export default Vue.extend({
 .waiting .waiting2 {
   opacity: 0;
 }
+
+.offline .waiting1,
+.offline .waiting2 {
+  transition: 0s;
+  transition-delay: 0s;
+}
 .hiddenbunnies {
   display: none !important;
 }
