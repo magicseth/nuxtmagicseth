@@ -18,12 +18,15 @@
         class="animaltrick"
         style="place-self:stretch; top:0px; left:0px"
       >
-        <div class="fullpage clickable centerer" @click="hideme">
+        <div
+          class="fullpage clickable centerer"
+          @click="
+            hideme($event);
+            showGoOffline();
+          "
+        >
           <div class="centerer" style="align-content:end;">
-            <div
-              class=" centered title hideoffline"
-              style="color:#ffffff;font-size:6vw"
-            >
+            <div class=" centered title " style="color:#ffffff;font-size:6vw">
               I'd like to read your mind
             </div>
           </div>
@@ -42,7 +45,11 @@
             </div>
           </div>
         </div>
-        <div class="fullpage centerer" @click="hideme">
+        <div
+          class="fullpage centerer onlineonly waiting"
+          ref="gooffline"
+          @click="hideme"
+        >
           <div class="centerer" style="align-content:end">
             <div class="title2  centered" style="font-size:5vw !important">
               to make this
@@ -51,7 +58,7 @@
               </div>
             </div>
           </div>
-          <div class="centerer">
+          <div class="centerer waiting1">
             <div class="imaginationblob centered" style="width:50vw">
               <imagination-blob class="blobbg" />
             </div>
@@ -61,7 +68,10 @@
             </div>
           </div>
           <div class="centerer" style="align-content:start">
-            <div class="title2  centered" style="font-size:2em !important">
+            <div
+              class="title2  centered waiting2"
+              style="font-size:2em !important"
+            >
               Turn on airplane mode<br /><br />
               Turn off Wifi<br /><br />
               Unplug your cables<br /><br />
@@ -87,7 +97,13 @@
         </div>
         <div class="fullpage centerer" ref="bunnyPage"></div>
 
-        <div class="fullpage clickable centerer" @click="hideme">
+        <div
+          class="fullpage clickable centerer"
+          @click="
+            hideme($event);
+            focusInput();
+          "
+        >
           <div class="title1 centered" style="align-self:end">
             I need a new pet
           </div>
@@ -104,6 +120,8 @@
           <div class="title2  centered">
             What animal should I get?<br />
             <input
+              v-model="input"
+              ref="animalinput"
               placeholder="Type your suggestion here"
               @keyup.enter="submitanimal"
             /><br />
@@ -121,7 +139,15 @@
         </div>
         <div class="fullpage centerer">
           <div class="title1  centered" style="font-size:10vw">
-            (617) 710-7496
+            {{
+              " (" +
+                phoneNumber.slice(1, 4) +
+                ") " +
+                phoneNumber.slice(4, 7) +
+                "-" +
+                phoneNumber.slice(7, 11)
+            }}
+
             <div class="title1 centered" style="margin-top:5vh;font-size:5vw">
               Now call me, <br />
               But don't ruin the surprise!
@@ -136,6 +162,7 @@
 <script lang="ts">
 import Vue from "vue";
 import CircleBlob from "~/components/CircleBlob.vue";
+import animals from "../animal.js";
 
 export default Vue.extend({
   layout: "greypage",
@@ -146,9 +173,16 @@ export default Vue.extend({
       bunnynumber: 20,
       hiddenBunnies: "hiddenbunnies",
       bunnyInterval: setInterval(() => {}, 10000),
+      input: "",
+      phoneNumber: "",
     };
   },
   methods: {
+    focusInput() {
+      setTimeout(() => {
+        (<HTMLElement>this.$refs.animalinput).focus();
+      }, 1500);
+    },
     startBunnies() {
       this.hiddenBunnies = "";
 
@@ -165,13 +199,27 @@ export default Vue.extend({
         }
       }, 400);
     },
+    showGoOffline() {
+      (<Element>this.$refs.gooffline).classList.remove("waiting");
+    },
     hideme(e: any) {
       console.log(e.currentTarget);
       e.currentTarget.classList.add("hidden");
       //   this.startBunnies();
     },
     submitanimal() {
-      (<Element>this.$refs.animalsubmission).classList.add("hidden");
+      if (this.checkAnimal()) {
+        (<Element>this.$refs.animalsubmission).classList.add("hidden");
+      } else {
+        (<HTMLElement>this.$refs.notananimal).style.display = "block";
+      }
+    },
+    checkOffline() {
+      if (navigator.onLine) {
+        document.body.classList.remove("offline");
+      } else {
+        document.body.classList.add("offline");
+      }
     },
     scrollToBotton() {
       window.scrollTo({
@@ -180,8 +228,35 @@ export default Vue.extend({
         behavior: "smooth",
       });
     },
+    checkAnimal() {
+      let input = this.input;
+      input = input.toLowerCase();
+      let result = "";
+      var words = input.split(" ");
+      var lastword = words[words.length - 1];
+      const myanimals: { [unit: string]: string } = <
+        { [unit: string]: string }
+      >(<unknown>animals);
+      if (myanimals[input]) {
+        result = myanimals[input];
+      } else if (myanimals[lastword]) {
+        result = myanimals[lastword];
+      } else {
+        // eslint-disable-next-line
+        console.log("failed " + input);
+        return false;
+      }
+      console.log(result);
+      this.phoneNumber = result;
+      return true;
+    },
   },
   mounted() {
+    // this.msg.push(Object.keys(animals)[0]);
+    window.addEventListener("online", this.checkOffline);
+    window.addEventListener("offline", this.checkOffline);
+    this.checkOffline();
+
     if (process.client) {
       var mythis = this;
       document.addEventListener(
@@ -211,6 +286,19 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.waiting1 {
+  transition: 2s;
+  transition-delay: 2.5s;
+}
+.waiting2 {
+  transition: 2s;
+  transition-delay: 5s;
+}
+
+.waiting .waiting1,
+.waiting .waiting2 {
+  opacity: 0;
+}
 .hiddenbunnies {
   display: none !important;
 }
@@ -230,7 +318,8 @@ export default Vue.extend({
 .fullpage.clickable {
   cursor: pointer;
 }
-.fullpage.hidden {
+.fullpage.hidden,
+.offline .onlineonly {
   height: 0px;
   opacity: 0;
   overflow: visible;
@@ -240,27 +329,10 @@ export default Vue.extend({
   transition: 1s;
   width: 70vw;
 }
-.offline .imaginationblob {
-  opacity: 0;
-}
-.offline .showoffline {
-  opacity: 1;
-  display: block;
-}
+
 .showoffline {
   opacity: 0;
   display: none;
-}
-.offline .title1 {
-  transition: 1s;
-  margin-top: -100vh;
-}
-.hideoffline {
-  transition: 1s;
-}
-.offline .hideoffline {
-  opacity: 0;
-  margin-top: -100vh;
 }
 input {
   width: 50vw;
