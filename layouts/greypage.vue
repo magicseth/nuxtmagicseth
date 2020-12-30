@@ -5,8 +5,12 @@
     </transition>
   </div>
 </template>
-<style scoped>
+<style>
 .greypage {
   background-color: #333333;
+}
+html {
+  background-color: #333333;
+  min-height: 100%;
 }
 </style>
