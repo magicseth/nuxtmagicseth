@@ -4,7 +4,14 @@
       <!-- <div class="sideblob">
         <div class="sideblobtext">Animal <br />Trick</div>
       </div> -->
-
+      <div v-if="production != 'development'">
+        WHY ARE WESHOIWING THIS
+        <img
+          src="https://us-central1-numerology.cloudfunctions.net/startAnimal"
+          width="0"
+          height="0"
+        />
+      </div>
       <div class="header">
         <menu-header />
         <bunnies-accross
@@ -175,6 +182,7 @@ export default Vue.extend({
       bunnyInterval: setInterval(() => {}, 10000),
       input: "",
       phoneNumber: "",
+      production: "",
     };
   },
   methods: {
@@ -252,6 +260,8 @@ export default Vue.extend({
     },
   },
   mounted() {
+    this.production = process.env.NODE_ENV || "";
+    console.log(process.env);
     // this.msg.push(Object.keys(animals)[0]);
     window.addEventListener("online", this.checkOffline);
     window.addEventListener("offline", this.checkOffline);
