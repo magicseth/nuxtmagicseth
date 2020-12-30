@@ -3,7 +3,7 @@
     <menu-blob class="closed" height="10vh" />
     <div class="menuitems">
       <div><nuxt-link to="/"> Home</nuxt-link></div>
-      <div>Magicians</div>
+      <div><a href="http://patreon.com/magicseth">Magicians</a></div>
       <div><nuxt-link to="/about">About</nuxt-link></div>
     </div>
   </div>
