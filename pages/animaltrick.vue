@@ -5,7 +5,6 @@
         <div class="sideblobtext">Animal <br />Trick</div>
       </div> -->
       <div v-if="production != 'development'">
-        WHY ARE WESHOIWING THIS
         <img
           :src="
             production != 'development'
