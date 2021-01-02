@@ -9,6 +9,9 @@
   </div>
 </template>
 <style scoped>
+.offline .menu {
+  display: none;
+}
 a {
   text-decoration: none;
   color: white;

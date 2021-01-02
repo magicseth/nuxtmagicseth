@@ -27,9 +27,8 @@
       David Copperfield
     </div>
     <div class="quote">
-      A fucking good magic trick<br />
-      "OMG What Just Happened”<br />
-      Robert Ramirez
+      "Oh come on!"<br />
+      Penn
     </div>
     <div class="quote">
       Amaze<br />
@@ -225,8 +224,8 @@
   text-align: center;
   /* background-color: red; */
   top: 0px;
-  opacity: 0;
-  transition: 2s;
+  opacity: 0.03;
+  transition: 1.2s;
   transition-timing-function: ease-in-out;
   font-family: "reenie_beanieregular";
   width: 20vw;

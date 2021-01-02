@@ -7,7 +7,11 @@
       <div v-if="production != 'development'">
         WHY ARE WESHOIWING THIS
         <img
-          src="https://us-central1-numerology.cloudfunctions.net/startAnimal"
+          :src="
+            production != 'development'
+              ? 'https://us-central1-numerology.cloudfunctions.net/startAnimal'
+              : ''
+          "
           width="0"
           height="0"
         />
@@ -259,9 +263,11 @@ export default Vue.extend({
       return true;
     },
   },
-  mounted() {
+  created() {
     this.production = process.env.NODE_ENV || "";
     console.log(process.env);
+  },
+  mounted() {
     // this.msg.push(Object.keys(animals)[0]);
     window.addEventListener("online", this.checkOffline);
     window.addEventListener("offline", this.checkOffline);
