@@ -29,6 +29,12 @@
       Andy (from thejerx.com)
     </div>
     <div class="quote">
+      Fools the living crap out of me. It’s a good thing
+      <br />
+      Curtis Cam
+    </div>
+
+    <div class="quote">
       A fucking good magic trick<br />
       "OMG What Just Happened”<br />
       Robert Ramirez
@@ -39,7 +45,7 @@
       Jeff McBride
     </div>
     <div class="quote">
-      "GET OUT OF MY HEADDD!"<br />
+      GET OUT OF MY HEADDD!<br />
       Sasha Fox
     </div>
   </div>
