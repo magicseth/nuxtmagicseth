@@ -6,12 +6,10 @@
       "Really Funny”<br />
       Mac King
     </div>
-    <div class="quote"></div>
-    <div class="quote"></div>
     <div class="quote">
-      A fucking good magic trick<br />
-      "OMG What Just Happened”<br />
-      Robert Ramirez
+      Unique and uncomplicated<br />
+
+      Lee Earle
     </div>
     <div class="quote">
       "I agree that that's impressive" <br />
@@ -21,12 +19,7 @@
       "Seth Raphael blows the mind”<br />
       Teller
     </div>
-    <div class="quote">
-      MagicMask<br />
-      "Do it again, for my fiancé” <br />
-      David Copperfield
-    </div>
-    <div class="quote">
+    <div class="quote" style="display:none">
       "Oh come on!"<br />
       Penn
     </div>
@@ -36,184 +29,18 @@
       Andy (from thejerx.com)
     </div>
     <div class="quote">
-      "Seth Raphael blows the mind”<br />
-      Teller
-    </div>
-    <div class="quote">
-      MagicMask<br />
-      "Do it again, for my fiancé” <br />
-      David Copperfield
-    </div>
-    <div class="quote">
       A fucking good magic trick<br />
       "OMG What Just Happened”<br />
       Robert Ramirez
     </div>
+
     <div class="quote">
-      Amaze<br />
-      "one of the best tricks I've ever seen” <br />
-      Andy (from thejerx.com)
+      "Impressive techno-magic!"<br />
+      Jeff McBride
     </div>
     <div class="quote">
-      "Seth Raphael blows the mind”<br />
-      Teller
-    </div>
-    <div class="quote">
-      MagicMask<br />
-      "Do it again, for my fiancé” <br />
-      David Copperfield
-    </div>
-    <div class="quote">
-      A fucking good magic trick<br />
-      "OMG What Just Happened”<br />
-      Robert Ramirez
-    </div>
-    <div class="quote">
-      Amaze<br />
-      "one of the best tricks I've ever seen” <br />
-      Andy (from thejerx.com)
-    </div>
-    <div class="quote">
-      "Seth Raphael blows the mind”<br />
-      Teller
-    </div>
-    <div class="quote">
-      MagicMask<br />
-      "Do it again, for my fiancé” <br />
-      David Copperfield
-    </div>
-    <div class="quote">
-      A fucking good magic trick<br />
-      "OMG What Just Happened”<br />
-      Robert Ramirez
-    </div>
-    <div class="quote">
-      Amaze<br />
-      "one of the best tricks I've ever seen” <br />
-      Andy (from thejerx.com)
-    </div>
-    <div class="quote">
-      "Seth Raphael blows the mind”<br />
-      Teller
-    </div>
-    <div class="quote">
-      MagicMask<br />
-      "Do it again, for my fiancé” <br />
-      David Copperfield
-    </div>
-    <div class="quote">
-      A fucking good magic trick<br />
-      "OMG What Just Happened”<br />
-      Robert Ramirez
-    </div>
-    <div class="quote">
-      Amaze<br />
-      "one of the best tricks I've ever seen” <br />
-      Andy (from thejerx.com)
-    </div>
-    <div class="quote">
-      "Seth Raphael blows the mind”<br />
-      Teller
-    </div>
-    <div class="quote">
-      MagicMask<br />
-      "Do it again, for my fiancé” <br />
-      David Copperfield
-    </div>
-    <div class="quote">
-      A fucking good magic trick<br />
-      "OMG What Just Happened”<br />
-      Robert Ramirez
-    </div>
-    <div class="quote">
-      Amaze<br />
-      "one of the best tricks I've ever seen” <br />
-      Andy (from thejerx.com)
-    </div>
-    <div class="quote">
-      "Seth Raphael blows the mind”<br />
-      Teller
-    </div>
-    <div class="quote">
-      MagicMask<br />
-      "Do it again, for my fiancé” <br />
-      David Copperfield
-    </div>
-    <div class="quote">
-      A fucking good magic trick<br />
-      "OMG What Just Happened”<br />
-      Robert Ramirez
-    </div>
-    <div class="quote">
-      Amaze<br />
-      "one of the best tricks I've ever seen” <br />
-      Andy (from thejerx.com)
-    </div>
-    <div class="quote">
-      "Seth Raphael blows the mind”<br />
-      Teller
-    </div>
-    <div class="quote">
-      MagicMask<br />
-      "Do it again, for my fiancé” <br />
-      David Copperfield
-    </div>
-    <div class="quote">
-      A fucking good magic trick<br />
-      "OMG What Just Happened”<br />
-      Robert Ramirez
-    </div>
-    <div class="quote">
-      Amaze<br />
-      "one of the best tricks I've ever seen” <br />
-      Andy (from thejerx.com)
-    </div>
-    <div class="quote">
-      "Seth Raphael blows the mind”<br />
-      Teller
-    </div>
-    <div class="quote">
-      MagicMask<br />
-      "Do it again, for my fiancé” <br />
-      David Copperfield
-    </div>
-    <div class="quote">
-      A fucking good magic trick<br />
-      "OMG What Just Happened”<br />
-      Robert Ramirez
-    </div>
-    <div class="quote">
-      Amaze<br />
-      "one of the best tricks I've ever seen” <br />
-      Andy (from thejerx.com)
-    </div>
-    <div class="quote">
-      "Seth Raphael blows the mind”<br />
-      Teller
-    </div>
-    <div class="quote">
-      MagicMask<br />
-      "Do it again, for my fiancé” <br />
-      David Copperfield
-    </div>
-    <div class="quote">
-      A fucking good magic trick<br />
-      "OMG What Just Happened”<br />
-      Robert Ramirez
-    </div>
-    <div class="quote">
-      Amaze<br />
-      "one of the best tricks I've ever seen” <br />
-      Andy (from thejerx.com)
-    </div>
-    <div class="quote">
-      "Seth Raphael blows the mind”<br />
-      Teller
-    </div>
-    <div class="quote">
-      MagicMask<br />
-      "Do it again, for my fiancé” <br />
-      David Copperfield
+      "GET OUT OF MY HEADDD!"<br />
+      Sasha Fox
     </div>
   </div>
 </template>

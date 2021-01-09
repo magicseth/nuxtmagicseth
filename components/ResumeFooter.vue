@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div>
-      <a href="mailto:2021@magicseth.com" target="_new">Seth Raphael</a>
+      <nuxt-link to="/about">Seth Raphael</nuxt-link>
     </div>
     <div class="footerLinks">
       <div>
